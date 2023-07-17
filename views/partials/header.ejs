@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %></title>
+</head>
+  <body>
+    <nav>
+      <!-- NAV BAR GENERAL DISPLAY -->
+      <img src="/images/camera.svg">
+      <a href="/">Home</a>
+      <!-- DISPLAYS ONLY IF 'USER' IS LOGGED IN (user = true) -->
+      <% if (user) { %>
+        <p>LOGGED IN SUCCESSFULLY</p>
+        <!-- END USER LOGGED IN ONLY DISPLAY -->
+      <% } else { %>
+        <!-- DISPLAYS IF USER IS NOT LOGGED IN -->
+        <a href="/auth/google" class="login">Sign In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
+    </nav>
+  <main>
+    <h1><%= title %></h1>
