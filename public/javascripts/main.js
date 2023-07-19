@@ -1,27 +1,42 @@
-function togglePostEdit() {
-  const editPosts = document.querySelectorAll('.post');
 
-  editPosts.forEach((post) => {
+/* Toggle Edit or View Post */
+
+function togglePostViewEdit() {
+  const posts = document.querySelectorAll('.post-container');
+  const body = document.querySelector('body');
+
+  posts.forEach((post) => {
     const showPost = post.querySelector('.show-post');
     const editPost = post.querySelector('.edit-post');
 
     showPost.addEventListener('dblclick', () => {
       post.classList.add('active');
     });
-
-    editPost.addEventListener('dblclick', () => {
-      post.classList.remove('active');
+    body.addEventListener('click', () => {
+      if(!editPost.contains(event.target)) post.classList.remove('active');
     });
   });
 }
 
-togglePostEdit();
+togglePostViewEdit();
 
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+/* ---------------------------------------- */
+
+/* Toggle Edit or View Title */
+
+function toggleTitleViewEdit() {
+  const body = document.querySelector('body');
+  const showTitle = document.querySelector('.view-board-title');
+  const editTitle = document.querySelector('.edit-board-title');
+  const title = document.querySelector('.title')
+
+    showTitle.addEventListener('click', () => {
+      title.classList.add('active');
+    });
+    body.addEventListener('dblclick', () => {
+      if(!editTitle.contains(event.target)) title.classList.remove('active');
+    });
   }
-}
+
+
+toggleTitleViewEdit();

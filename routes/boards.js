@@ -16,6 +16,9 @@ router.get('/boards/:id', ensureLoggedIn, boardCtrl.showBoard);
 
 /* --------------DETAILS PAGE---------------------- */
 
+//Update this Board
+router.put('/boards/:id', ensureLoggedIn, boardCtrl.updateBoard);
+
 //Delete this Board
 router.delete('/boards/:id', ensureLoggedIn, boardCtrl.deleteBoard);
 
@@ -25,9 +28,9 @@ router.post('/boards/:id/posts', ensureLoggedIn, boardCtrl.newPost);
 //Update a Post Form
 router.put('/posts/:id', ensureLoggedIn, boardCtrl.updatePost);
 
-//Access Specific Board
+//Delete a Post Form
+router.delete('/posts/:id', ensureLoggedIn, boardCtrl.deletePost);
 
-//
 
 
 module.exports = router;

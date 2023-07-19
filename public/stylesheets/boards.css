@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  height: 100vh;
-  width: 100%
 }
 
 
@@ -9,15 +7,13 @@ body {
   margin: 2vmin;
   background: #009578;
   font: 2vmin "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Libre Baskerville', serif;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+
 }
 
-h1 {
-  display: flex;
-  margin: 0;
-  font-size: 4vmin;
-}
 
 main {
   display: flex;
@@ -26,76 +22,165 @@ main {
 
 menu {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 10vmin;
-  border: 5px solid blueviolet;
+  border: none;
+  text-align: center;
 }
 
-form {
-
-}
-
-#switch-boards {
+h1 {
   display: flex;
-
+  justify-content: center;
+  margin: 0;
+  font-size: 4vmin;
 }
+
+h3 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.edit-board-title {
+  display: none;
+}
+
 
 board {
   display: flex;
-  flex: 8;
   flex-wrap: wrap;
+  gap: 1em;
   justify-content: center;
-  height: 80vmin;
+  height: 6em;
 }
 
 footer {
-
+  display: flex;
+  align-self: self-end;
 }
 
-input {
-  display: block;
-  height: 4vmin;
-  width: 20vmin;
+.board-icon > a{
+  display: flex;
+  background-color: #b0834f;
+  color: rgba(53, 51, 14, 0.781);
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  text-align:center;
+  resize: none;
+  font-size: 20px;
+  text-decoration: none;
+} 
+
+a:hover {
+  box-shadow: 0 0 8px rgba(53 , 51, 14, 0.8);
+}
+
+.delete-board {
+  height: 2em;
+  width: 10em;
+  background: none;
+  border: none;
   margin: 1vmin;
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
 }
+
+.title.active .view-board-title {
+  display: none;
+}
+
+.title.active .edit-board-title {
+  display: block;
+}
+
 
 /* ------------ POST-IT PAGE STYLING -------------- */
 
 .board {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  padding: 24px;
-  gap: 24px;
-  border: 5px solid red;
+  justify-items: center;
+  padding: 4vmin;
+  gap: 30px;
+  border: 2vmin solid rgba(84, 46, 46, 0.842);
+  background-image: url(https://lh3.googleusercontent.com/pw/AIL4fc-eMFim3luZN-Jf9yu6aXXxFZ5dsDKq3BwC3cW-bCTkibbpxTJVn9LYcHcOFgLpxu9xfXnrjNJCSYkA-UO9L9F_A16m6fjk5cQBd6s9o-lIJX-TdGnFflCNnxPqg3TzghQuW0jNQcuu2Lfx7B9qzBYJfg=w1920-h1280-s-no?authuser=0);
+  background-size: contain;
+  font-family: 'Pangolin', cursive;
+
 }
 
 .post {
-  position: relative;
+  display: flex;
+  background-color: #dce284;
+  justify-content: center;
   height: 200px;
   width: 200px;
   padding: 10px;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 0 7px rgba(0 , 0, 0, 0.5);
   text-align:center;
   resize: none;
+  font-size: 10px;
 } 
+
+.post-container {
+  box-shadow: 0 0 7px rgba(0 , 0, 0, 0.5);
+}
+
+.add-post-it {
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  background: rgba(0 , 0, 0, 0.2);
+  font-size: 120px;
+  color: rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.show-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  box-shadow: none;
+}
+
+.delete-post-button {
+  display: flex;
+  align-self: flex-end;
+  height: 40px;
+  width: 40px;
+  display: none;
+  background: none;
+  border: none;
+}
+
+.X {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  color: rgba(0,0,0,0.5);
+}
+
+p {
+  font-size: 18px;
+}
 
 .content {
   display: none;
   height: 100%;
 }
 
-.show-post {
-  display: block;
-  border-radius: 10px;
-} 
-
-.edit-post {
-  display: none;
-  border-radius: 10px;
-} 
 
 .post.active .show-post {
   display: none;
@@ -105,34 +190,39 @@ input {
   display: block;
 }
 
-.edit-textarea {
-  width: 100%;
-  height: 100px;
-  resize: none;
-}
-
-.update-post-button, .delete-post-button {
-  display: block;
-  margin-top: 10px;
-  height: 30px;
-}
-
-.add-post-it {
-  height: 200px;
-  border: none;
-  outline: none;
-  background: rgba(0 , 0, 0, 0.2);
+.edit-post {
+  display: none;
   border-radius: 10px;
-  font-size: 120px;
-  color: rgba(0,0,0,0.5);
-  cursor: pointer;
+} 
+
+  .edit-textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 15px;
+    resize: none;
+    border-radius: 10px;
+    background: none;
+    border: none;
+  }
+
+  .update-post-button {
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+  }
+
+
+
+.post:hover .delete-post-button {
+  display: block;
   transition-duration: 0.5s;
 }
 
-.post:hover {
+.post-container:hover {
   box-shadow: 0 0 8px rgba(0 , 0, 0, 0.8);
 }
 
 .add-post-it:hover {
   background: rgba(0,0,0,0.4);
 }
+

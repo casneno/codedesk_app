@@ -2,64 +2,20 @@
 
 <main>
   <menu>
-
-  <form id="add-board" action="/boards" method="POST">
-    <input type="submit" value="+ New Board">
-  </form>
-
-  <% boards.forEach(function(board) { %>
-    <div>
-      <a href="/boards/<%= board._id %>"><%= board.title %></a>
-    </div>
-  <% }) %>
-
-
-
-  <!-- UNUSED CODE -->
-</menu>
-<board>
-  <% boards.forEach(function(board) { %>
-    <div class="board">
-      <% board.posts.forEach(function(post) { %>
-
-          <div class="post" ondblclick="replaceWithTextarea('<%= post.content %>')">
-            <div class="post-content"><%= post.content %></div>
-            <textarea class="edit-post-it"><%= post.content %></textarea>
-          </div>
-
-        <!-- <form action="/posts/<%= post._id %>?_method=PUT" method="POST"> -->
-          <!-- <div class="post" ondblclick="toggleEdit()">
-            <textarea class="edit-post-it"><%= post.content %></textarea>
-            <button class="edit-post-it">Delete</button>
-            <div class="post-it"><%= post.content %></div>
-          </div> -->
-        <!-- </form> -->
+    <h1>Boards Menu</h1>
+  </menu>
+  <board>
+      <% boards.forEach(function(board) { %>
+        <div class="board-icon">
+          <a href="/boards/<%= board._id %>"><%= board.title %></a>
+        </div>
       <% }) %>
-      <form action="/boards/<%= board._id %>/posts" method="POST">
-        <button class="add-post-it" type="submit">+</button>
+      <form class="post add-post-it" action="/boards" method="POST">
+        <button class="post add-post-it" type="submit">+</button>
       </form>
-      <form id="delete-board" action="/boards/<% board._id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Board">
-      </form>
-    </div>
-  <% }) %>
-  </board>
-</main>
+    </board>
+  </main>
 
 <%- include('../partials/footer.ejs'); -%>
 
-<!-- <h2>Boards</h2>
-<div class="board">
-  <form id="add_post" action="">
-    <input type="text" placeholder="+ Add New Post" id="new-post">
-    <button type=""submit>Add +</button>
-  </form>
 
-  <div class="columns">
-    <div class="posts" id="post">
-      <h3 class="category_title">Category</h3>
-      <p class="post-it" draggable="true">Post 1</p>
-      <p class="post-it" draggable="true">Post 2</p>
-      <p class="post-it" draggable="true">Post 3</p>
-    </div>
-  </div> -->

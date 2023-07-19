@@ -7,9 +7,11 @@ module.exports = {
   boardIndex,
   newBoard,
   showBoard,
+  updateBoard,
   deleteBoard,
   newPost,
   updatePost,
+  deletePost,
 };
 
 /* Display Boards Page */
@@ -42,7 +44,6 @@ async function newBoard(req, res){
 }
 
 /* Show Board Detail */
-
 async function showBoard(req, res) {
   try{    
     const board = await Board.findById(req.params.id).populate('posts');
@@ -58,15 +59,30 @@ async function showBoard(req, res) {
   }
 }
 
+/* Update Board */
+async function updateBoard(req, res) {
+  console.log("Checkpoint 1")
+  try {
+    const board = await Board.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
+    console.log("Checkpoint 2")
+    await board.save();
+    console.log("Checkpoint 3");
+    return res.redirect(`/boards/${req.params.id}`);
+  } catch (err) {
+    console.log(err);
+    return res.redirect('/boards');
+  }
+}
 
 /* Delete Board */
-
 async function deleteBoard(req, res) {
+  await 
   await Board.findOneAndDelete({_id: req.params.id, user: req.user._id});
   // Deleted book, so must redirect to index
   res.redirect('/boards');
 }
 
+/* --------------------POST CONTROLLERS ----------------- */
 
  /* Add new post */
 async function newPost(req, res){
@@ -90,9 +106,9 @@ async function newPost(req, res){
 
 /* Update Post */
 async function updatePost(req, res){
-  console.log("Checkpoint 1")
+
   const post = await PostIt.findById(req.params.id).populate('board');
-  console.log(post)
+  
   //console.log('ID:', req.params.id)
   try {
     //const update = await PostIt.findOneAndUpdate({_id:req.params.id}, {content: req.body.text})
@@ -102,7 +118,6 @@ async function updatePost(req, res){
     //console.log(board._id)
     //const postSubdoc = board.posts.id(req.params.id);
     if(!post.board.user._id.equals(req.user._id)) return res.redirect(`/boards/${post.board._id}`);
-    console.log("Checkpoint 1")
     post.content = req.body.text;
     await post.save();
   } catch (err) {
@@ -111,38 +126,16 @@ async function updatePost(req, res){
   res.redirect(`/boards/${post.board._id}`);
 }
 
-function deletePost(){
-
+async function deletePost(req, res){
+  try{
+    console.log("Checkpoint 1")
+    const post = await PostIt.findById(req.params.id)
+    console.log(post)
+    //await PostIt.findOneAndDelete({_id: req.params.id}); «« this can also be used instead of deleteOne, but it would be redundant, sicne we already got the ID in the line above.
+    await PostIt.deleteOne(post);
+    res.redirect(`/boards/${post.board}`);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-
-
-
-
-/* javascript */
-
-
-// const board = document.getElementById("board")
-// const post = board.querySelector("post")
-// const addPostIt = board.querySelector(".add-post-it")
-
-// async function getPost(req, res){
-//   const PostIt = await Board.findById(req.params.id).populate
-
-// }
-
-
-// function createPost (id, content){
-  
-
-
-//   const element = document.createElement("textarea")
-
-//   element.classList.add("post-it");
-//   element.value = content;
-//   element.placeholder = "Write your note...";
-
-//   element.addEventListener("change", ()=>{
-//     updatePost(id, element.value);
-//   });
-// }
