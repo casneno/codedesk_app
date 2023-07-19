@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 
-/* GET home page. */
+/* GET myDesk page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'CodeDesk' });
+  res.render('login', { title: 'CodeDesk' });
 });
 
 // (1)LOGIN Route
@@ -19,8 +19,8 @@ router.get('/auth/google', passport.authenticate('google',
 // (2)Google CALLBACK Route
 router.get('/oauth2callback', passport.authenticate('google',
   {
-    successRedirect: '/home',
-    failureRedirect: '/home'
+    successRedirect: '/myDesk',
+    failureRedirect: '/login'
   }
 ));
 
@@ -28,7 +28,7 @@ router.get('/oauth2callback', passport.authenticate('google',
 router.get('/logout', function(req,res) {
   req.logout(function() {
     // Change path for your "landing" page
-    res.redirect('/home');
+    res.redirect('/myDesk');
   });
 });
 

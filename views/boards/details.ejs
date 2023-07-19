@@ -1,0 +1,43 @@
+<%- include('../partials/header.ejs'); -%>
+
+<button onclick="myFunction()">Click Me</button>
+<div id="myDIV">
+  This is my DIV element.
+</div>
+
+<!-- DETAILS, SWITCHING -->
+<h1><% board.title %></h1>
+
+<form id="switch-boards" action="" method="GET">
+  <input type="submit" value="Previous">
+  <input type="submit" value="Next">
+</form>
+
+<form id="delete-board" action="/boards/<%= board._id %>?_method=DELETE" method="POST">
+  <input type="submit" value="Delete Board">
+</form>
+
+<!-------------------- BOARD  -------------------------------->
+
+  <div class="board">
+  <% board.posts.forEach(function(post) { %> 
+    <div class="post">
+      <div class="content show-post"><%= post.content %></div>
+      <div class="content edit-post">
+        <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+          <textarea class="edit-textarea" name="text"><%= post.content %></textarea>
+          <button class="update-post-button" type="submit">Save</button>
+        </form>
+        <form id="delete-post" action="/boards/<%= board._id %>?_method=DELETE" method="POST">
+          <button type="submit" class="btn btn-primary btn-block" class="delete-post-button" >Delete</button>
+        </form>
+      </div>
+    </div>
+  <% }) %>
+  <form action="/boards/<%= board._id %>/posts" method="POST">
+    <button class="add-post-it" type="submit">+</button>
+  </form>
+</div>
+
+<%- include('../partials/footer.ejs'); -%>
+

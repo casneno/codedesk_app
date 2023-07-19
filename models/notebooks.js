@@ -1,17 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const postSchema = new Schema({
+const notebookSchema = new Schema({
   title: String,
-  content: String,
+  description: String,
   favorite: Boolean,
-  board: {
+  chapters: [{
     type: Schema.Types.ObjectId,
-    ref: 'Board',
-    required: true,
-  },
+    ref: 'Chapter' 
+  }],
 }, {
   timestamps: true,
 });
 
-module.exports = mongoose.model('PostIt', postSchema);
+module.exports = mongoose.model('Notebook', boardSchema);

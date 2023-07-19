@@ -3,14 +3,20 @@ const Schema = mongoose.Schema;
 
 const boardSchema = new Schema({
   title: String,
-  content: String,
+  position: Number,
+  description: String,
   favorite: Boolean,
   posts: [{
     type: Schema.Types.ObjectId,
     ref: 'PostIt' 
   }],
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
 }, {
-  timestamp: true,
+  timestamps: true,
 });
 
-module.exports = mongoose.model('PostIt', postSchema);
+module.exports = mongoose.model('Board', boardSchema);

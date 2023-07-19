@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%
+}
+
+
+body {
+  margin: 2vmin;
+  background: #009578;
+  font: 2vmin "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  display: flex;
+  margin: 0;
+  font-size: 4vmin;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 10vmin;
+  border: 5px solid blueviolet;
+}
+
+form {
+
+}
+
+#switch-boards {
+  display: flex;
+
+}
+
+board {
+  display: flex;
+  flex: 8;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 80vmin;
+}
+
+footer {
+
+}
+
+input {
+  display: block;
+  height: 4vmin;
+  width: 20vmin;
+  margin: 1vmin;
+}
+
+/* ------------ POST-IT PAGE STYLING -------------- */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 24px;
+  gap: 24px;
+  border: 5px solid red;
+}
+
+.post {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 7px rgba(0 , 0, 0, 0.5);
+  text-align:center;
+  resize: none;
+} 
+
+.content {
+  display: none;
+  height: 100%;
+}
+
+.show-post {
+  display: block;
+  border-radius: 10px;
+} 
+
+.edit-post {
+  display: none;
+  border-radius: 10px;
+} 
+
+.post.active .show-post {
+  display: none;
+}
+
+.post.active .edit-post {
+  display: block;
+}
+
+.edit-textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+.update-post-button, .delete-post-button {
+  display: block;
+  margin-top: 10px;
+  height: 30px;
+}
+
+.add-post-it {
+  height: 200px;
+  border: none;
+  outline: none;
+  background: rgba(0 , 0, 0, 0.2);
+  border-radius: 10px;
+  font-size: 120px;
+  color: rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.post:hover {
+  box-shadow: 0 0 8px rgba(0 , 0, 0, 0.8);
+}
+
+.add-post-it:hover {
+  background: rgba(0,0,0,0.4);
+}
