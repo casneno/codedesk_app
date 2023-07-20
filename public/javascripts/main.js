@@ -40,3 +40,15 @@ function toggleTitleViewEdit() {
 
 
 toggleTitleViewEdit();
+
+
+/* -------------------------------------------------- */
+
+/* Stop Tutorial Cursors */
+
+const addPostIt = document.querySelector('.add-post-it');
+
+// Add a event listener to stop the animation when the user hovers over the board container
+addPostIt.addEventListener('mouseenter', () => {
+  addPostIt.classList.add('paused'); // Remove the animation
+});

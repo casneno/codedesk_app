@@ -17,7 +17,9 @@ module.exports = {
 /* Display Boards Page */
 async function boardIndex(req, res) {
   try {
-    const boards = await Board.find({}).sort('position').populate('posts');
+    const userId = req.user.id;
+    console.log(userId)
+    const boards = await Board.find({user: userId}).sort('position').populate('posts');
     res.render('boards', {  title: 'Boards', boards }); //here we send to an EJS file inside a folder
   } catch (err) {
     console.log(err);

@@ -54,15 +54,32 @@ desk > img {
   
 }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Scale up the board slightly */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .board-button {
   position: absolute;
   height: 50%;
-  width: 43%;
+  width: 42%;
   top: 0%;
   left: 18%;
   background: none;
-  border:none;
+  border: 5px solid hsla(121, 88%, 53%, 0.5);
   cursor: pointer;
+  animation: pulsate 1.5s infinite;
+}
+
+.board-button.paused {
+  animation-play-state: paused;
 }
 
 .board-button:hover {

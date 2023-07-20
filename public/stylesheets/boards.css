@@ -5,8 +5,7 @@
 
 body {
   background: rgba(178,148,113,255);
-  font: 2vmin "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-family: 'Libre Baskerville', serif;
+  font: 2vmin 'Libre Baskerville', Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -57,31 +56,36 @@ board {
   height: 6rem;
 }
 
-footer {
-  display: flex;
-  align-self: self-end;
+.board-icon {
+  background-image: url(https://lh3.googleusercontent.com/pw/AIL4fc-w6BHDFdTjc4S5Z9ZxkIdDVzRZoaSPsMNcTNouJsPvBmhZ4_0iu5iia4y_qvZTgPvPIQa0z2Kq-F_zh_wo3KpqezDaqvCzEUhgZ29QPMQPv9A0cSu8ea346m2mwvMiROGFhUK5BN954fktlEv7wr1qKA=w1000-h692-s-no?authuser=0);
+  height: auto;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .board-icon > a{
   display: flex;
-  background-color: #b0834f;
-  color: rgba(53, 51, 14, 0.781);
+  background:none;
+  color: #96302e;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   padding: 10px;
-  border: none;
-  border-radius: 10px;
+  border: 5px solid #4d3620;
   text-align:center;
   resize: none;
-  font-size: 20px;
+  font-size: 30px;
   text-decoration: none;
+  font-family: 'Permanent Marker', cursive;
 } 
 
 .board-icon > a:hover {
   box-shadow: 0 0 8px rgba(53 , 51, 14, 0.8);
 }
+
 submenu {
   display: flex;
   flex-direction: row;
@@ -136,7 +140,7 @@ submenu:visited {
   background-image: url(https://lh3.googleusercontent.com/pw/AIL4fc-eMFim3luZN-Jf9yu6aXXxFZ5dsDKq3BwC3cW-bCTkibbpxTJVn9LYcHcOFgLpxu9xfXnrjNJCSYkA-UO9L9F_A16m6fjk5cQBd6s9o-lIJX-TdGnFflCNnxPqg3TzghQuW0jNQcuu2Lfx7B9qzBYJfg=w1920-h1280-s-no?authuser=0);
   background-size: contain;
   font-family: 'Pangolin', cursive;
-
+  
 }
 
 .post {
@@ -156,6 +160,18 @@ submenu:visited {
   box-shadow: 0 0 7px rgba(0 , 0, 0, 0.5);
 }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01); /* Scale up the board slightly */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .add-post-it {
   justify-content: center;
   align-items: center;
@@ -165,6 +181,11 @@ submenu:visited {
   color: rgba(0,0,0,0.5);
   cursor: pointer;
   transition-duration: 0.5s;
+  animation: pulsate 1.5s infinite;
+}
+
+.add-post-it.paused {
+  animation-play-state: paused;
 }
 
 .show-post {
@@ -257,5 +278,5 @@ p {
 
 .add-post-it:hover {
   background: rgba(0,0,0,0.4);
+  animation:none;
 }
-

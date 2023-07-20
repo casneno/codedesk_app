@@ -2,7 +2,7 @@
 
 <main>
   <menu>
-    <h1>Boards Menu</h1>
+    <h1>Choose a Board</h1>
   </menu>
   <submenu>
     <a href="/myDesk">Back to MyDesk</a>
@@ -13,7 +13,7 @@
           <a href="/boards/<%= board._id %>"><%= board.title %></a>
         </div>
       <% }) %>
-      <form class="post add-post-it" action="/boards" method="POST">
+      <form action="/boards" method="POST">
         <button class="post add-post-it" type="submit">+</button>
       </form>
     </board>
