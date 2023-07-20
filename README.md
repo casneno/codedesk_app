@@ -20,7 +20,7 @@ Upon login you will be stationed in your virtual desk.  For now, the only functi
 
 The tool was first conceived within the Wireframe displayed below and it's display and functionalities were gradually improved as the development progressed.  The ERD was created taking into consideration future features of the app, such as the notebook and the laptop.  The steps were organized acording to a Pseudocode (see below) and the development stages were checked and added/removed using Evernote.
 
-|CodeDesk Wireframe| [CodeDesk Wireframe](https://github.com/casneno/codedesk_app/blob/main/public/images/Desktop%20Wireframe.png)
+|CodeDesk Wireframe| ![CodeDesk Wireframe](https://github.com/casneno/codedesk_app/blob/main/public/images/Desktop%20Wireframe.png)
 |CodeDesk ERD| [CodeDesk ERD]("\\wsl.localhost\Ubuntu\home\lucasneno\code\codedesk_app\public\images\CodeDesk ERD.png")
 
 
