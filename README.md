@@ -3,8 +3,10 @@
 ### All note-taking resources a prominent code student needs!
 While learning to code and even during your coding sessions as a prominent developer have you ever felt like there was just so much new information being thrown at you at the same time that you had little to no time to take notes? Ever had a code snippet you really wanted to keep and comment but had no where to store it, other than a VS file? Or maybe even foudn yourself havinag to run multiple note-taking apps to manage all your notes, codes and references? If you answered yes to any of teh questions above, then CodeDesk is for you. 
 ### Description & Motivation
-This CodeDesk app is the second of four projects in the General Assembly SEI Course.  The purpose of this project was for us to apply our knowledge of the second part of the course. This app was a solo development over the course of one week.  The game was developed using the following technologies: 
-![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5) ![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)  
+This CodeDesk app is the second of four projects in the General Assembly SEI Course.  The purpose of this project was for us to apply our knowledge of the second part of the course. This app was a solo development over the course of one week.  The game was developed using the following technologies:  
+  
+![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)  
+![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)  
 ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)  
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)  
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)  
