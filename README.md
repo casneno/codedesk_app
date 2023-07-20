@@ -21,7 +21,7 @@ Upon login you will be stationed in your virtual desk.  For now, the only functi
 The tool was first conceived within the Wireframe displayed below and it's display and functionalities were gradually improved as the development progressed.  The ERD was created taking into consideration future features of the app, such as the notebook and the laptop.  The steps were organized acording to a Pseudocode (see below) and the development stages were checked and added/removed using Evernote.
 
 |CodeDesk Wireframe| ![CodeDesk Wireframe](https://github.com/casneno/codedesk_app/blob/main/public/images/Desktop%20Wireframe.png)
-|CodeDesk ERD| [CodeDesk ERD]("\\wsl.localhost\Ubuntu\home\lucasneno\code\codedesk_app\public\images\CodeDesk ERD.png")
+|CodeDesk ERD| ![CodeDesk ERD](https://github.com/casneno/codedesk_app/blob/main/public/images/CodeDesk%20ERD.png)
 
 
 ### Pseudocode
@@ -64,8 +64,8 @@ Once the entire site was fuctional and the database responsive, I carried on to 
 
 Below are a few snippets of some of the CRUD functionalities, the HTML and Routes as well as images of the final product:
 
-| Board Menu | [Board Menu]("\\wsl.localhost\Ubuntu\home\lucasneno\code\codedesk_app\public\images\Board Menu.png")
-| Boards Screen with Post-Its| [Board Screen]("\\wsl.localhost\Ubuntu\home\lucasneno\code\codedesk_app\public\images\Board Page.png")
+| Board Menu | ![Board Menu](https://github.com/casneno/codedesk_app/blob/main/public/images/Board%20Menu.png)
+| Boards Screen with Post-Its| ![Board Screen](https://github.com/casneno/codedesk_app/blob/main/public/images/Board%20Page.png)
 
 *Display, Add, Delete and Delete Posts in the same page*
 ```sh
