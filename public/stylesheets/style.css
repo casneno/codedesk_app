@@ -7,7 +7,9 @@ justify-content: center;
 }
 
 .login {
-  position: relative;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
   padding: 10px 60px;
   background: #fff;
   border: 0;

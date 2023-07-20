@@ -13,8 +13,6 @@ body {
   
 }
 
-
-
 main {
   display: flex;
   flex-direction: column;
@@ -25,22 +23,25 @@ menu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 10vmin;
+  height: 6rem;
   border: none;
   text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 h1 {
   display: flex;
   justify-content: center;
   margin: 0;
-  font-size: 4vmin;
+  font-size: 3rem;
 }
 
 h3 {
   display: flex;
   justify-content: center;
   margin: 0;
+  font-size: 2rem;
 }
 
 .edit-board-title {
@@ -51,9 +52,9 @@ h3 {
 board {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 1rem;
   justify-content: center;
-  height: 6em;
+  height: 6rem;
 }
 
 footer {
@@ -85,25 +86,33 @@ submenu {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 3em;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
-
 
 submenu>a{
   font-size: 1.3rem;
   display: flex;
+  align-items: center;
+  color: brown;
+
+}
+
+submenu:visited {
+  color: brown;
 }
 
 .delete-board {
-  height: 2em;
-  width: 10em;
+  height: 2rem;
+  width: 10rem;
   background: none;
   border: none;
-  margin: 1vmin;
+  margin: 0;
   cursor: pointer;
-  color: white;
+  color: brown;
   font-size: 1.3rem;
   text-decoration: underline;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .title.active .view-board-title {
