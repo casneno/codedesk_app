@@ -35,7 +35,6 @@ async function newBoard(req, res){
       user: req.user._id, //adds user ID to this board
     });
     await board.save();
-    console.log('board saved successfully')
     res.redirect('/boards')
   } catch (err) {
     console.log(err);
@@ -61,12 +60,9 @@ async function showBoard(req, res) {
 
 /* Update Board */
 async function updateBoard(req, res) {
-  console.log("Checkpoint 1")
   try {
     const board = await Board.findOneAndUpdate({_id: req.params.id}, req.body, {new: true});
-    console.log("Checkpoint 2")
     await board.save();
-    console.log("Checkpoint 3");
     return res.redirect(`/boards/${req.params.id}`);
   } catch (err) {
     console.log(err);
@@ -76,9 +72,8 @@ async function updateBoard(req, res) {
 
 /* Delete Board */
 async function deleteBoard(req, res) {
-  await 
+  await PostIt.deleteMany({board: req.params.id})
   await Board.findOneAndDelete({_id: req.params.id, user: req.user._id});
-  // Deleted book, so must redirect to index
   res.redirect('/boards');
 }
 
@@ -90,7 +85,7 @@ async function newPost(req, res){
     const board = await Board.findById(req.params.id)
     const post = await PostIt.create({
       title: "New Post",
-      content: "Now Post Text Here...",
+      content: "Click to add a comment...",
       favorite: false,
       board: req.params.id
     })

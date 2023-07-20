@@ -1,23 +1,69 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-a {
-  color: #00B7FF;
+init {
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+  position: relative;
+  padding: 10px 60px;
+  background: #fff;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight:500;
+  border-radius: 30px;
 }
 
 .login img {
   height: 30px;
 }
 
+desk > img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+.desk {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://lh3.googleusercontent.com/pw/AIL4fc-IQygi-SCK1TqTlnRRaQZPSbybxHy8wvsMhQ1Jbu7Jn2s-XLdl8SOkDhZK6nrbzNDhK5fy2qbIKd94OlZb1tkSttE4tsASj-CBOntA8_hG_BhYe3K1nRC0xpDFT5zYQsCtecsAzOLeD36CeU1orjGMqw=w1932-h1289-s-no?authuser=0);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+desk > img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
+.login-container{
+  width: 100%;
+  height: 100vh;
+  
+}
+
+.board-button {
+  position: absolute;
+  height: 50%;
+  width: 43%;
+  top: 0%;
+  left: 18%;
+  background: none;
+  border:none;
+  cursor: pointer;
+}
+
+.board-button:hover {
+  background: rgba(150, 142, 26, 0.5);
+  box-shadow: 0 0 8px rgba(0,0, 0, 0.8);
+}
