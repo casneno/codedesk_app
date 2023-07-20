@@ -32,5 +32,4 @@ router.put('/posts/:id', ensureLoggedIn, boardCtrl.updatePost);
 router.delete('/posts/:id', ensureLoggedIn, boardCtrl.deletePost);
 
 
-
 module.exports = router;

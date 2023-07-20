@@ -98,22 +98,13 @@ async function newPost(req, res){
     console.log(err);
     res.redirect('/boards');
   }
-  res.redirect(`/boards/${req.params.id}`); //here we redirect to an URLL
+  res.redirect(`/boards/${req.params.id}`);
 }
 
 /* Update Post */
 async function updatePost(req, res){
-
   const post = await PostIt.findById(req.params.id).populate('board');
-  
-  //console.log('ID:', req.params.id)
   try {
-    //const update = await PostIt.findOneAndUpdate({_id:req.params.id}, {content: req.body.text})
-    //if(!update) console.log('TEST FAILED');
-    //const post = await PostIt.findById(req.params.id);
-    // const boardId = await Board.findById({'post._id': req.params.id});
-    //console.log(board._id)
-    //const postSubdoc = board.posts.id(req.params.id);
     if(!post.board.user._id.equals(req.user._id)) return res.redirect(`/boards/${post.board._id}`);
     post.content = req.body.text;
     await post.save();
@@ -123,12 +114,12 @@ async function updatePost(req, res){
   res.redirect(`/boards/${post.board._id}`);
 }
 
+/* Delete Post */
 async function deletePost(req, res){
   try{
     console.log("Checkpoint 1")
     const post = await PostIt.findById(req.params.id)
     console.log(post)
-    //await PostIt.findOneAndDelete({_id: req.params.id}); «« this can also be used instead of deleteOne, but it would be redundant, sicne we already got the ID in the line above.
     await PostIt.deleteOne(post);
     res.redirect(`/boards/${post.board}`);
   } catch (err) {

@@ -1,16 +1,13 @@
 <%- include('../partials/header.ejs'); -%>
 
-<!------------- MENU --------------->
-
+<!---------------------- MENU --------------------------------->
 
 <menu>
-
   <div class="title">
     <div class="view-board-title">
       <h1><%= board.title %></h1>
       <h3><%= board.description %></h3>
     </div>
-
     <div class="edit-board-title">
       <form action="/boards/<%= board._id %>?_method=PUT" method="POST">
         <input class="edit-title" name="title" placeholder="Add a Title" maxlength=100 value="<%= board.title %>">
@@ -20,21 +17,18 @@
     </div>
   </div>
 </menu>
-  <submenu>
-    <a href="/boards">Choose another Board</a>
+<submenu>
+  <a href="/boards">Choose another Board</a>
+  <form id="delete-board" action="/boards/<%= board._id %>?_method=DELETE" method="POST">
+    <input class="delete-board" type="submit" value="Delete Board">
+  </form>
+</submenu>
 
-    <form id="delete-board" action="/boards/<%= board._id %>?_method=DELETE" method="POST">
-      <input class="delete-board" type="submit" value="Delete Board">
-    </form>
-  </submenu>
+<!--------------------------- BOARD  ----------------------------->
 
-<!-------------------- BOARD  -------------------------------->
-
-  <div class="board">
-
+<div class="board">
   <% board.posts.forEach(function(post) { %> 
     <div class="post post-container">
-
       <div class="post show-post">
         <p><%= post.content %></p>
         <form class="delete-post-button" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
@@ -46,14 +40,12 @@
           </button>
         </form>
       </div>
-
       <div class="edit-post">
         <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
           <textarea class="edit-textarea" name="text"><%= post.content %></textarea>
           <button class="update-post-button" type="submit">Save Post</button>
         </form>
       </div>
-
     </div>
   <% }) %>
   <form action="/boards/<%= board._id %>/posts" method="POST">
