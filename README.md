@@ -69,6 +69,7 @@ Below are a few snippets of some of the CRUD functionalities, the HTML and Route
 
 | Board Menu | ![Board Menu](https://github.com/casneno/codedesk_app/blob/main/public/images/Board%20Menu.png)
 | Boards Screen with Post-Its| ![Board Screen](https://github.com/casneno/codedesk_app/blob/main/public/images/Board%20Page.png)
+|Landing Page | ![Landing Page](https://lh3.googleusercontent.com/pw/AIL4fc9Y4JEkp7RpXAVv8pWA6DpVxuJJO0DzApNN3FRgSUPw9Bn1ya5PFhSXiT0JcgYDZ0jLqUGBGLzS3Z-ZS5tIoZWFW26K358jbl_ulxNtSqJXLlIza06xXdwj1F7mwq8SVK6aOPhtqPpCLTUQ3qdFgzrr_g=w2537-h1362-s-no?authuser=0)
 
 *Display, Add, Delete and Delete Posts in the same page*
 ```sh
