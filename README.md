@@ -1,7 +1,7 @@
 # CodeDesk
 
 ### All note-taking resources a prominent code student needs!
-While learning to code and even during your coding sessions as a prominent developer have you ever felt like there was just so much new information being thrown at you at the same time that you had little to no time to take notes? Ever had a code snippet you really wanted to keep and comment but had no where to store it, other than a VS file? Or maybe even foudn yourself havinag to run multiple note-taking apps to manage all your notes, codes and references? If you answered yes to any of teh questions above, then CodeDesk is for you. 
+While learning to code and even during your coding sessions as a prominent developer have you ever felt like there was just so much new information being thrown at you at the same time that you had little to no time to take notes? Ever had a code snippet you really wanted to keep and comment but had no where to store it, other than a VS file? Or maybe even found yourself having to run multiple note-taking apps to manage all your notes, codes and references? If you answered yes to any of the questions above, then CodeDesk is for you. 
 ### Description & Motivation
 This CodeDesk app is the second of four projects in the General Assembly SEI Course.  The purpose of this project was for us to apply our knowledge of the second part of the course. This app was a solo development over the course of one week.  The game was developed using the following technologies:  
   
@@ -13,7 +13,7 @@ This CodeDesk app is the second of four projects in the General Assembly SEI Cou
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)  
 
 ### Try it out!
-Since this is a free Web-based app, anyone can play it without any requirements. Just click this [link](https://codedesk-71e7862f6501.herokuapp.com/) to test the app!
+Since this is a free Web-based app, anyone can use it without any requirements. Just click this [link](https://codedesk-71e7862f6501.herokuapp.com/) to test the app!
 
 
 ### How to Use
